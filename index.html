@@ -24,28 +24,29 @@ header {
 }
 
 .merch {
-    background: transparent;
+    background: transparent; /* Pastikan tidak ada latar belakang tambahan */
 }
 
 .item {
-    background: rgba(255, 255, 255, 0.1); 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
+    background: rgba(255, 255, 255, 0.05); /* Transparan dengan sedikit efek kaca */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border lebih halus agar tidak terlalu mencolok */
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
     width: 220px;
     text-align: center;
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px); /* Efek blur lebih kuat */
+    -webkit-backdrop-filter: blur(15px); /* Untuk Safari */
 }
 
+/* Hapus background gelap yang masih ada */
 section {
     padding: 20px;
-    background: transparent; /* Pastikan tidak ada warna hitam */
+    background: transparent !important; /* Pastikan tidak ada warna lain */
     margin: 20px 0;
     border-radius: 10px;
-}        
-        
+}
+
 img {
     max-width: 100%;
     border-radius: 10px;
@@ -67,13 +68,6 @@ h1.intro {
     padding-top: 20%;
 }
 
-section {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin: 20px 0;
-    border-radius: 10px;
-}
-</style>
 </head>
 <body>
 
@@ -100,21 +94,72 @@ section {
     
 <body>
     <section>
-      <center>
-        <h2>Kaos Sablon Arjuna Temple</h2>
-        <div class="merch">
-            <div class="item">
-                <a href="https://wa.me/6287876087319" target="_blank">
-                    <div class="image-container">
-                        <img src="https://i.imgur.com/umgCzWo.jpeg" alt="Kaos Sablon Arjuna Temple">
-                    </div>
-                    <h3>Kaos Sablon Arjuna Temple</h3>
-                </a>
+        <center>
+            <h2>Kaos Sablon Arjuna Temple</h2>
+            <div class="merch">
+                <div class="item">
+                    <a href="https://wa.me/6287876087319" target="_blank">
+                        <div class="image-container">
+                            <img src="https://i.imgur.com/umgCzWo.jpeg" alt="Kaos Sablon Arjuna Temple" onclick="openFullscreen(this)">
+                        </div>
+                        <h3>Kaos Sablon Arjuna Temple</h3>
+                    </a>
+                </div>
             </div>
-        </div>
-      </center>
+        </center>
     </section>
+
+    <!-- Lightbox untuk fullscreen -->
+    <div id="lightbox" class="lightbox" onclick="closeFullscreen()">
+        <img id="lightbox-img">
+    </div>
+
+    <script>
+        function openFullscreen(img) {
+            var lightbox = document.getElementById("lightbox");
+            var lightboxImg = document.getElementById("lightbox-img");
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+        }
+
+        function closeFullscreen() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+
+    <style>
+        /* Lightbox fullscreen */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        /* Efek hover untuk gambar */
+        img {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </body>
+
 
 <footer>
     <p>© 2025</p>
