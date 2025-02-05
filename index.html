@@ -14,12 +14,22 @@ body {
     padding: 0;
 }
 
-/* Navigasi */
+.blur-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
 .navbar {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     padding: 10px;
     position: sticky;
     top: 0;
@@ -39,7 +49,6 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Kontainer blur */
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -50,25 +59,21 @@ body {
     border-radius: 10px;
 }
 
-/* Footer */
 footer {
     text-align: center;
     margin-top: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: none;
     padding: 10px;
 }
 </style>
 </head>
 <body>
 
-<!-- Navigasi -->
 <div class="navbar">
     <a href="index.html">Home</a>
     <a href="produk.html">Produk</a>
 </div>
 
-<!-- Konten -->
 <div class="container">
     <h1>Dieng, Banjarnegara: Keindahan Negeri di Atas Awan</h1>
     <h2>Sejarah Dieng</h2>
