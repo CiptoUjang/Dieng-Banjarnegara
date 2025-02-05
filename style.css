@@ -1,5 +1,6 @@
+/* Mengatur latar belakang untuk section */
 section {
-    background-image: url('https://media.discordapp.net/attachments/1280708771152396338/1336527701401538603/5f82ef26c49c6.jpg?ex=67a421eb&is=67a2d06b&hm=79c16daabedd831e6166352bacba4c477587dbb70e877070ef865f093b285dd2&=&format=webp&width=921&height=614'); /* Ganti dengan URL gambar yang kamu inginkan */
+    background-image: url('blob:https://web.whatsapp.com/c4b58d27-3504-40a7-af9e-91eaee260c52'); /* Ganti dengan URL gambar latar belakang */
     background-size: cover; /* Membuat gambar menutupi seluruh area */
     background-position: center; /* Memastikan gambar berada di tengah */
     background-attachment: fixed; /* Membuat gambar latar tetap saat scroll */
@@ -7,15 +8,26 @@ section {
     color: white; /* Mengubah warna teks menjadi putih agar kontras dengan latar belakang */
 }
 
+/* Pengaturan untuk item di dalam section */
 .merch .item {
-    background-color: rgba(0, 0, 0, 0.5); /* Menambahkan efek transparansi hitam untuk kontras gambar */
-    border-radius: 10px; /* Memberikan sudut yang membulat pada item */
-    padding: 20px; /* Menambahkan jarak di sekitar konten item */
     text-align: center; /* Menyelaraskan teks di tengah */
 }
 
+/* Pengaturan untuk kotak gambar */
+.image-container {
+    width: 100%; /* Menyesuaikan ukuran gambar dengan lebar kontainer */
+    max-width: 500px; /* Membatasi lebar maksimum gambar */
+    margin: 0 auto 20px; /* Memberikan jarak di bawah gambar */
+    padding: 10px;
+    border: 2px solid #ddd; /* Menambahkan border di sekitar gambar */
+    border-radius: 10px; /* Membulatkan sudut kotak */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan pada kotak */
+    background-color: #fff; /* Memberikan latar belakang putih pada gambar */
+}
+
+/* Mengatur ukuran gambar */
 .merch img {
-    width: 100%; /* Memastikan gambar menyesuaikan lebar kontainer */
-    height: auto; /* Memastikan gambar menjaga proporsinya */
-    border-radius: 10px; /* Membuat gambar memiliki sudut membulat */
+    width: 100%; /* Menyesuaikan lebar gambar dengan kontainer */
+    height: auto; /* Mempertahankan rasio aspek gambar */
+    border-radius: 8px; /* Membulatkan sudut gambar */
 }
