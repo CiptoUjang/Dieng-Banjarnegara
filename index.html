@@ -23,6 +23,27 @@ header {
     padding: 20px;
 }
 
+/* Efek blur untuk teks utama */
+.blurred-text {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Efek blur untuk teks header */
+header h1 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Produk */
 .merch {
     background: transparent;
 }
@@ -50,22 +71,6 @@ img {
     max-width: 100%;
     border-radius: 10px;
     cursor: pointer;
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9em;
-}
-
-h1, h2 {
-    text-align: center;
-}
-
-h1.intro {
-    color: white;
-    text-align: center;
-    padding-top: 20%;
 }
 
 /* Tombol WhatsApp */
@@ -129,12 +134,30 @@ a {
 a:visited, a:active {
     color: inherit;
 }
+
+/* Footer dengan efek blur */
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Kotak blur untuk teks di footer */
+.footer-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 5px;
+}
 </style>
 
 </head>
 <body>
 
-<h1 class="intro">Selamat Datang, Silahkan Lihat-Lihat dan Dibeli Ya</h1>
+<!-- Teks utama dengan efek blur -->
+<h1 class="intro blurred-text">Selamat Datang, Silahkan Lihat-Lihat dan Dibeli Ya</h1>
 
 <header>
     <h1>Souvenir Dieng, Banjarnegara</h1>
@@ -175,8 +198,8 @@ a:visited, a:active {
 </script>
 
 <footer>
-    <p>© 2025</p>
-    <p><a href="https://saweria.co/vloits19" target="_blank">Dukung Kami Melalui Saweria</a></p>
+    <p class="footer-box">© 2025</p>
+    <p class="footer-box"><a href="https://saweria.co/vloits19" target="_blank">Dukung Kami Melalui Saweria</a></p>
 </footer>
 
 </body>
