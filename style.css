@@ -1,0 +1,21 @@
+section {
+    background-image: url('https://media.discordapp.net/attachments/1280708771152396338/1336527701401538603/5f82ef26c49c6.jpg?ex=67a421eb&is=67a2d06b&hm=79c16daabedd831e6166352bacba4c477587dbb70e877070ef865f093b285dd2&=&format=webp&width=921&height=614'); /* Ganti dengan URL gambar yang kamu inginkan */
+    background-size: cover; /* Membuat gambar menutupi seluruh area */
+    background-position: center; /* Memastikan gambar berada di tengah */
+    background-attachment: fixed; /* Membuat gambar latar tetap saat scroll */
+    padding: 40px; /* Memberikan ruang di dalam section */
+    color: white; /* Mengubah warna teks menjadi putih agar kontras dengan latar belakang */
+}
+
+.merch .item {
+    background-color: rgba(0, 0, 0, 0.5); /* Menambahkan efek transparansi hitam untuk kontras gambar */
+    border-radius: 10px; /* Memberikan sudut yang membulat pada item */
+    padding: 20px; /* Menambahkan jarak di sekitar konten item */
+    text-align: center; /* Menyelaraskan teks di tengah */
+}
+
+.merch img {
+    width: 100%; /* Memastikan gambar menyesuaikan lebar kontainer */
+    height: auto; /* Memastikan gambar menjaga proporsinya */
+    border-radius: 10px; /* Membuat gambar memiliki sudut membulat */
+}
