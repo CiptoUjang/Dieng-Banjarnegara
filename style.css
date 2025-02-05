@@ -1,6 +1,6 @@
 /* Mengatur latar belakang untuk section */
 section {
-    background-image: url('https://cdn.discordapp.com/attachments/1280708771152396338/1336527701401538603/5f82ef26c49c6.jpg?ex=67a421eb&is=67a2d06b&hm=79c16daabedd831e6166352bacba4c477587dbb70e877070ef865f093b285dd2&'); /* Ganti dengan URL gambar latar belakang */
+    background-image: url('https://imgur.com/a/kG1h6b2'); /* Ganti dengan URL gambar latar belakang */
     background-size: cover; /* Membuat gambar menutupi seluruh area */
     background-position: center; /* Memastikan gambar berada di tengah */
     background-attachment: fixed; /* Membuat gambar latar tetap saat scroll */
