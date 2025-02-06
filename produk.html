@@ -64,6 +64,7 @@ body {
     width: 100%;
     height: auto;
     border-radius: 12px;
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 .item h3 {
@@ -95,21 +96,41 @@ footer {
     background: none;
 }
 
-.fullscreen-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 101;
+/* Styles for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    justify-content: center;
+    align-items: center;
 }
 
-.fullscreen-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -122,7 +143,7 @@ footer {
 
 <section class="merch">
     <div class="item">
-        <img src="https://i.imgur.com/umgCzWo.jpeg" alt="Kaos Sablon Arjuna Temple">
+        <img src="https://i.imgur.com/umgCzWo.jpeg" alt="Kaos Sablon Arjuna Temple" id="productImage">
         <h3>Kaos Sablon Arjuna Temple</h3>
         <a href="https://wa.me/6287876087319" target="_blank" class="buy-button">Beli Sekarang</a>
     </div>
@@ -132,33 +153,27 @@ footer {
     <p>©2025 Dieng Banjarnegara</p>
 </footer>
 
-<!-- Button to trigger fullscreen -->
-<button class="fullscreen-btn" onclick="toggleFullScreen()">Fullscreen</button>
+<!-- Modal for fullscreen image -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
 
 <script>
-function toggleFullScreen() {
-    if (!document.fullscreenElement &&    // Check if we're not already in fullscreen mode
-        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
-            document.documentElement.webkitRequestFullscreen();
-        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-            document.documentElement.msRequestFullscreen();
-        }
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { // Firefox
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { // IE/Edge
-            document.msExitFullscreen();
-        }
-    }
+// Get the modal and the image
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modalImage");
+
+// Get the image and insert it inside the modal
+var img = document.getElementById("productImage");
+img.onclick = function() {
+    modal.style.display = "flex";
+    modalImg.src = this.src;
+}
+
+// Close the modal when the user clicks on <span> (x)
+function closeModal() {
+    modal.style.display = "none";
 }
 </script>
 
