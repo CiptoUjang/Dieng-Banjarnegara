@@ -94,6 +94,23 @@ footer {
     padding: 10px;
     background: none;
 }
+
+.fullscreen-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 101;
+}
+
+.fullscreen-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 </style>
 </head>
 <body>
@@ -114,6 +131,36 @@ footer {
 <footer>
     <p>©2025 Dieng Banjarnegara</p>
 </footer>
+
+<!-- Button to trigger fullscreen -->
+<button class="fullscreen-btn" onclick="toggleFullScreen()">Fullscreen</button>
+
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement &&    // Check if we're not already in fullscreen mode
+        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+            document.documentElement.msRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+            document.msExitFullscreen();
+        }
+    }
+}
+</script>
 
 </body>
 </html>
